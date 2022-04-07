@@ -67,3 +67,14 @@ Soit("l'utilisateur est sur la page d'édition de l'item {string}") do |item|
   visit getURI(item)
 end
 
+Soit("tous les corpus sont sélectionnés") do
+  check('.corpus_checkbox')
+end
+
+Soit("aucun des corpus n'est sélectionné") do
+  uncheck('.corpus_checkbox')
+end
+
+Soit("aucun item n'est affiché") do
+  expect(page).not_to have_selector ".Item"
+end
